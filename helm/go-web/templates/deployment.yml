@@ -14,7 +14,7 @@ spec:
     spec: 
       containers:
       - name: 'containerwebapp'
-        image: omnagare/go-web-app:v1 
+        image: omnagare/go-web-app:{{ .Values.image.tag }}
         ports:
           - containerPort: 8080
       
