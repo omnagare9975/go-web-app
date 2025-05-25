@@ -40,11 +40,13 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v4
 
-      - name: run golangci-lint
+      - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v6
-        with: 
+        with:
           version: v1.56.2
           args: ./...
+          working-directory: ./ # 👈 make sure this is where your go.mod is
+
   
   push: 
     runs-on: ubuntu-latest
