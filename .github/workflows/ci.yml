@@ -35,7 +35,9 @@ jobs:
 
   code_quaility:
     runs-on: 'ubuntu-latest'
-
+    
+    needs: build
+    
     steps:
       - name: checkout repository
         uses: actions/checkout@v4
@@ -48,7 +50,7 @@ jobs:
   
   push: 
     runs-on: ubuntu-latest
-      
+    needs:  code_quaility
     steps:
       - name: checkout the code
         uses: actions/checkout@v4
